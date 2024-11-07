@@ -23,4 +23,6 @@ public class SignUpActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+    
 }

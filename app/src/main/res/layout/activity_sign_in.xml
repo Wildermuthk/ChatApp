@@ -36,10 +36,56 @@
             android:textStyle="bold"/>
         
         <EditText
+            android:id="@+id/inputEmail"
             android:layout_width="match_parent"
-            android:layout_height="50sp">
+            android:layout_height="50dp"
+            android:layout_marginTop="60dp"
+            android:hint="@string/email"
+            android:background="@drawable/background_input"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"/>
 
-        </EditText>
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:hint="@string/password"
+            android:background="@drawable/background_input"
+            android:imeOptions="actionNext"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textAlignment="gravity"
+            android:textColor="@color/text_primary"
+            android:textSize="18sp"/>
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/sign_in"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:cornerRadius="8sp"/>
+        
+        <TextView
+            android:id="@+id/textCreateNewAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/create_new_account"
+            android:textColor="@color/primary"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
