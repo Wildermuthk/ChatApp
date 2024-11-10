@@ -9,4 +9,6 @@
     <string name="create_new_account1">Create New Account</string>
     <string name="add_image">Add Image</string>
     <string name="name">name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
 </resources>
