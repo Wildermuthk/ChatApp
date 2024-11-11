@@ -23,13 +23,6 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       /* EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_sign_in);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });*/
 
         binding = ActivitySignInBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -40,23 +33,6 @@ public class SignInActivity extends AppCompatActivity {
         binding.textCreateNewAccount.setOnClickListener(v ->
                 startActivity(new Intent(getApplicationContext(),SignUpActivity.class)));
 
-        binding.buttonSignIn.setOnClickListener(v -> addDatatoFireStore());
-    }
-
-    private void addDatatoFireStore() {
-        FirebaseFirestore database = FirebaseFirestore.getInstance();
-        HashMap<String,String> data = new HashMap<>();
-
-        data.put("first_name", "Steve");
-        data.put("last_name","Summers");
-
-        database.collection("Users").add(data).addOnSuccessListener(
-                documentReference -> {
-                    Toast.makeText(getApplicationContext(), "Data Inserted", Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(exception ->{
-                    Toast.makeText(getApplicationContext(),exception.getMessage(),Toast.LENGTH_SHORT).show();
-
-        });
     }
 
 }
