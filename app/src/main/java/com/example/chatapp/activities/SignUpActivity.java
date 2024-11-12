@@ -137,7 +137,10 @@ public class SignUpActivity extends AppCompatActivity {
     );
 
     private Boolean isValidSignUpDetails(){
-        if (binding.inputName.getText().toString().trim().isEmpty()){
+        if(encodeImage == null){
+            showToast("Please select your image");
+            return false;
+        } else if (binding.inputName.getText().toString().trim().isEmpty()){
             showToast("Please enter your name");
             return false;
         } else if (binding.inputEmail.getText().toString().trim().isEmpty()){
