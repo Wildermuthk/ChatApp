@@ -26,6 +26,13 @@ public class SignInActivity extends AppCompatActivity {
     private ActivitySignInBinding binding;
     private PreferenceManager preferenceManager;
 
+    /**
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +43,9 @@ public class SignInActivity extends AppCompatActivity {
         setListeners();
     }
 
+    /**
+     * A method to set the listeners for clicking the create a new account button and sign in button.
+     */
     private void setListeners() {
         binding.textCreateNewAccount.setOnClickListener(v ->
                 startActivity(new Intent(getApplicationContext(),SignUpActivity.class)));
@@ -47,9 +57,18 @@ public class SignInActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     *
+     * @param message The message to be shown to the user.
+     */
     private void showToast(String message){
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
+
+    /**
+     * A method to sign the user into the app. SignIn checks if the input email and password match
+     * what is in Firebase. A toast message appears if the user is unable to sign in.
+     */
     private void SignIn() {
         loading(true);
         FirebaseFirestore database = FirebaseFirestore.getInstance();
@@ -75,6 +94,12 @@ public class SignInActivity extends AppCompatActivity {
                     }
         });
     }
+
+    /**
+     *
+     * @param isLoading A boolean variable to determine if the progress bar should be shown to
+     * indicate the app loading.
+     */
     private void loading(Boolean isLoading){
         if(isLoading){
             binding.buttonSignIn.setVisibility(View.INVISIBLE);
@@ -85,6 +110,11 @@ public class SignInActivity extends AppCompatActivity {
         }
     }
 
+
+    /**
+     *
+     * @return Returns if the details the user provided are valid for sign in.
+     */
     private boolean isValidSignUpDetails() {
         if (binding.inputEmail.getText().toString().trim().isEmpty()){
             showToast("Please enter your email");

@@ -39,6 +39,14 @@ public class SignUpActivity extends AppCompatActivity {
 
     private PreferenceManager preferenceManager;
 
+
+    /**
+     *
+     * @param savedInstanceState If the activity is being re-initialized after
+     *     previously being shut down then this Bundle contains the data it most
+     *     recently supplied in {@link #onSaveInstanceState}.  <b><i>Note: Otherwise it is null.</i></b>
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +55,10 @@ public class SignUpActivity extends AppCompatActivity {
         preferenceManager = new PreferenceManager(getApplicationContext());
         setListeners();
     }
+
+    /**
+     * A method to set the listeners for the app such as the sign up button.
+     */
 
     private void setListeners() {
         binding.textSignIn.setOnClickListener(v -> onBackPressed());
@@ -66,10 +78,17 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
 
+    /**
+     *
+     * @param message The message to be shown to the user.
+     */
     private void showToast(String message){
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * A method to sign the user up and store the data they enter.
+     */
     private void SignUp(){
         //Check loading
         loading(true);
@@ -102,6 +121,11 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     * @param bitmap The but map used to encode the image for storage in Firebase.
+     * @return Returns the encoded image.
+     */
     private String encodeImage(Bitmap bitmap){
         int previewWidth = 150;
         int previewHeight = bitmap.getHeight()*previewWidth / bitmap.getWidth();
@@ -135,6 +159,10 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
     );
+    /**
+     * A method to sign the user uo for the app. SignUp checks that the user has input data correctly
+     * into the fields. A toast message appears for each field if the input data is wrong.
+     */
 
     private Boolean isValidSignUpDetails(){
         if(encodeImage == null){
@@ -165,6 +193,11 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     *
+     * @param isLoading A boolean variable to determine if the progress bar should be shown to
+     * indicate the app loading.
+     */
     private void loading(Boolean isLoading){
         if(isLoading){
             binding.buttonSignUp.setVisibility(View.INVISIBLE);
