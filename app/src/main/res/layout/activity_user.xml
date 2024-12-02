@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@color/primary"
-    tools:context=".activities.userActivity">
+    tools:context=".activities.UserActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageBack"
@@ -27,7 +27,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chat"
+        android:text="@string/chat"
         android:textColor="@color/white"
         android:textStyle="bold"
         android:textSize="14sp"
