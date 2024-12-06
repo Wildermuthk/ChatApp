@@ -47,10 +47,10 @@
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="@id/imageProfile"
         app:layout_constraintBottom_toBottomOf="@id/imageProfile"
         app:layout_constraintStart_toEndOf="@id/imageProfile"
-        app:layout_constraintEnd_toStartOf="@id/imagesSignOut"/>
+        app:layout_constraintEnd_toStartOf="@id/imagesSignOut"
+        app:layout_constraintTop_toTopOf="@id/imageProfile"/>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -60,6 +60,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageProfile">
 
+        <ProgressBar
+            android:id="@id/progressBar"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_gravity="center"/>
 
     </FrameLayout>
 

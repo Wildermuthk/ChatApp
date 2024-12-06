@@ -50,9 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void setListeners(){
         binding.imagesSignOut.setOnClickListener(v -> signOut());
-
-        binding.fabNewChat.setOnClickListener(v ->
-                startActivity(new Intent(getApplicationContext(), UserActivity.class)));
+        binding.fabNewChat.setOnClickListener(v -> startActivity
+                (new Intent(getApplicationContext(), UserActivity.class)));
     }
 
 
@@ -92,6 +91,5 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), SignInActivity.class));
             finish();
         }).addOnFailureListener(e -> showToast("Unable to sign out"));
-
     }
 }

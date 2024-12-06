@@ -27,7 +27,6 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
     public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         ItemContainerUserBinding itemContainerUserBinding = ItemContainerUserBinding
                 .inflate(LayoutInflater.from(parent.getContext()), parent, false);
-
         return new UserViewHolder(itemContainerUserBinding);
     }
 
@@ -58,8 +57,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
     }
 
     private Bitmap getUserImage(String encodeImage){
-        byte [] bytes = Base64.decode(encodeImage, Base64.DEFAULT);
-
+        byte[] bytes = Base64.decode(encodeImage, Base64.DEFAULT);
         return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
     }
 
