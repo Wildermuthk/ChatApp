@@ -21,7 +21,7 @@
         android:layout_height="1dp"
         app:layout_constraintBottom_toBottomOf="@id/imageProfile"
         app:layout_constraintStart_toEndOf="@id/imageProfile"
-        app:layout_constraintTop_toBottomOf="@id/imageProfile"/>
+        app:layout_constraintTop_toTopOf="@id/imageProfile"/>
 
 
     <TextView
@@ -36,7 +36,7 @@
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@id/imageProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/viewSupporter"/>
+        app:layout_constraintTop_toTopOf="@id/imageProfile"/>
 
     <TextView
         android:id="@+id/textEmail"
@@ -50,6 +50,6 @@
         android:textSize="13sp"
         app:layout_constraintStart_toEndOf="@id/imageProfile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewSupporter"/>
+        app:layout_constraintTop_toBottomOf="@id/textFirstName"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
